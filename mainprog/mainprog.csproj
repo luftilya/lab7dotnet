@@ -6,7 +6,7 @@
     <Nullable>enable</Nullable>
     <UseWindowsForms>true</UseWindowsForms>
     <ImplicitUsings>enable</ImplicitUsings>
-    <StartupObject>mainprog.Program</StartupObject>
+    <StartupObject>lab7.Program</StartupObject>
     <AssemblyName>lab7</AssemblyName>
     <RootNamespace>lab7</RootNamespace>
     <ApplicationIcon>self_icon.ico</ApplicationIcon>
@@ -14,6 +14,10 @@
 
   <ItemGroup>
     <Content Include="self_icon.ico" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\wonderful_tools\wonderful_tools.csproj" />
   </ItemGroup>
 
 </Project>
