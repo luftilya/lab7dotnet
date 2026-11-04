@@ -10,10 +10,15 @@ namespace wonderful_tools
 {
     public class Point
     {
-        double x = 0.0,
-               y = 0.0;
+        Nullable<double> x, y;
 
-        public Point(double x, double y)
+        public Point()
+        {
+            x = null;
+            y = null;
+        }
+
+        public Point(Nullable<double> x, Nullable<double> y)
         {
             this.x = x;
             this.y = y;
@@ -21,11 +26,11 @@ namespace wonderful_tools
 
         public void SetX(double x) => this.x = x;
 
-        public double GetX() => x;
+        public Nullable<double> GetX() => x;
 
         public void SetY(double y) => this.y = y;
 
-        public double GetY() => y;
+        public Nullable<double> GetY() => y;
 
         public void WhatIsQuater(out char quater)
         {
@@ -47,11 +52,38 @@ namespace wonderful_tools
             return quater_of_1 == quater_of_2;
         }
 
-        public static void DistanceBetweenTwoPoints(Point p1, Point p2, out double d) 
-            => d = Math.Sqrt(Math.Pow(p2.GetX() - p1.GetX(), 2) + Math.Pow(p2.GetY() - p1.GetY(), 2));
+        public static void DistanceBetweenTwoPoints(Point p1, Point p2, out double d)
+            => d = Math.Sqrt(Math.Pow((double)(p2.GetX() - p1.GetX()), 2) + Math.Pow((double)(p2.GetY() - p1.GetY()), 2));
 
-        public static void SquareOfTriangle(Point p1, Point p2, Point p3, out double S)
+        public static void SetDefaultIfNull(
+            Point p1, 
+            Point p2, 
+            Point p3)
         {
+            if (p1.GetX() is null)
+                p1.SetX(0.0);
+            if (p1.GetY() is null)
+                p1.SetY(0.0);
+
+            if (p2.GetX() is null)
+                p2.SetX(2.0);
+            if (p2.GetY() is null)
+                p2.SetY(0.0);
+
+            if (p3.GetX() is null)
+                p3.SetX(1.0);
+            if (p3.GetY() is null)
+                p3.SetY(2.0);
+        }
+
+        public static void SquareOfTriangle(
+            Point p1, 
+            Point p2, 
+            Point p3, 
+            out double S)
+        {
+            SetDefaultIfNull(p1, p2, p3);
+
             Point mp = new Point(
                 ((p1.GetX() + p2.GetX()) / 2.0), p1.GetY()
             );
@@ -62,32 +94,14 @@ namespace wonderful_tools
             S = (a * h) / 2.0;
         }
 
-        public static void PerimetrOfTriangle(out double P)
+        public static void PerimetrOfTriangle(
+            Point p1,
+            Point p2,
+            Point p3,
+            out double P)
         {
-            Point p1 = new Point(0.0, 0.0);
-            Point p2 = new Point(2.0, 0.0);
-            Point p3 = new Point(1.0, 2.0);
+            SetDefaultIfNull(p1, p2, p3);
 
-            PerimetrOfTriangle(p1, p2, p3, out P);
-        }
-
-        public static void PerimetrOfTriangle(Point p1, out double P)
-        {
-            Point p2 = new Point(2.0, 0.0);
-            Point p3 = new Point(1.0, 2.0);
-
-            PerimetrOfTriangle(p1, p2, p3, out P);
-        }
-
-        public static void PerimetrOfTriangle(Point p1, Point p2, out double P)
-        {
-            Point p3 = new Point(1.0, 2.0);
-
-            PerimetrOfTriangle(p1, p2, p3, out P);
-        }
-
-        public static void PerimetrOfTriangle(Point p1, Point p2, Point p3, out double P)
-        {
             DistanceBetweenTwoPoints(p1, p2, out double fs);
             DistanceBetweenTwoPoints(p2, p3, out double ss);
             DistanceBetweenTwoPoints(p3, p1, out double ts);
@@ -108,15 +122,15 @@ namespace wonderful_tools
 
                 for (int j = 0; j < nums.GetLength(1); j++)
                     sum += nums[i, j];
-                
+
                 count = sum / nums.GetLength(1) < 0 ? ++count : count;
             }
 
             return count;
         }
 
-        public static double CalcFuncA(double x, double y) 
-            => (Math.Sqrt(Math.Abs(x - 1)) - Math.Sqrt(Math.Abs(y))) 
+        public static double CalcFuncA(double x, double y)
+            => (Math.Sqrt(Math.Abs(x - 1)) - Math.Sqrt(Math.Abs(y)))
                 / (1 + (Math.Pow(x, 2) / 2) + (Math.Pow(y, 2) / 4));
 
         public static double CalcFuncB(double x, double z)
