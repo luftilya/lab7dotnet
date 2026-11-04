@@ -1,0 +1,7 @@
+<Solution>
+  <Folder Name="/Элементы решения/">
+    <File Path="README.md" />
+  </Folder>
+  <Project Path="mainprog/mainprog.csproj" />
+  <Project Path="wonderful_tools/wonderful_tools.csproj" />
+</Solution>

@@ -1,0 +1,19 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <OutputType>Exe</OutputType>
+    <TargetFramework>net10.0-windows</TargetFramework>
+    <Nullable>enable</Nullable>
+    <UseWindowsForms>true</UseWindowsForms>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <StartupObject>mainprog.Program</StartupObject>
+    <AssemblyName>lab7</AssemblyName>
+    <RootNamespace>lab7</RootNamespace>
+    <ApplicationIcon>self_icon.ico</ApplicationIcon>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <Content Include="self_icon.ico" />
+  </ItemGroup>
+
+</Project>
