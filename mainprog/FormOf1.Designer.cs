@@ -36,7 +36,9 @@
             add_button = new Button();
             del_button = new Button();
             contextMenuStrip = new ContextMenuStrip(components);
-            перейтиВОкноСтрокиToolStripMenuItem = new ToolStripMenuItem();
+            add_ToolStripMenuItem = new ToolStripMenuItem();
+            change_ToolStripMenuItem = new ToolStripMenuItem();
+            del_ToolStripMenuItem = new ToolStripMenuItem();
             contextMenuStrip.SuspendLayout();
             SuspendLayout();
             // 
@@ -54,12 +56,13 @@
             // find_button
             // 
             find_button.Font = new Font("Segoe UI", 18F, FontStyle.Bold, GraphicsUnit.Point, 204);
-            find_button.Location = new Point(73, 188);
+            find_button.Location = new Point(80, 181);
             find_button.Name = "find_button";
             find_button.Size = new Size(286, 63);
             find_button.TabIndex = 1;
             find_button.Text = "Найти!";
             find_button.UseVisualStyleBackColor = true;
+            find_button.Click += find_button_Click;
             // 
             // listBox
             // 
@@ -69,6 +72,7 @@
             listBox.Name = "listBox";
             listBox.Size = new Size(413, 250);
             listBox.TabIndex = 3;
+            listBox.MouseDown += listBox_MouseDown;
             // 
             // find_label
             // 
@@ -90,6 +94,7 @@
             add_button.TabIndex = 4;
             add_button.Text = "добавить\r\nстроку";
             add_button.UseVisualStyleBackColor = true;
+            add_button.Click += add_button_Click;
             // 
             // del_button
             // 
@@ -100,19 +105,35 @@
             del_button.TabIndex = 5;
             del_button.Text = "удалить\r\nстроку";
             del_button.UseVisualStyleBackColor = true;
+            del_button.Click += del_button_Click;
             // 
             // contextMenuStrip
             // 
             contextMenuStrip.ImageScalingSize = new Size(20, 20);
-            contextMenuStrip.Items.AddRange(new ToolStripItem[] { перейтиВОкноСтрокиToolStripMenuItem });
+            contextMenuStrip.Items.AddRange(new ToolStripItem[] { add_ToolStripMenuItem, change_ToolStripMenuItem, del_ToolStripMenuItem });
             contextMenuStrip.Name = "contextMenuStrip";
-            contextMenuStrip.Size = new Size(240, 28);
+            contextMenuStrip.Size = new Size(209, 76);
             // 
-            // перейтиВОкноСтрокиToolStripMenuItem
+            // add_ToolStripMenuItem
             // 
-            перейтиВОкноСтрокиToolStripMenuItem.Name = "перейтиВОкноСтрокиToolStripMenuItem";
-            перейтиВОкноСтрокиToolStripMenuItem.Size = new Size(239, 24);
-            перейтиВОкноСтрокиToolStripMenuItem.Text = "Перейти в окно строки";
+            add_ToolStripMenuItem.Name = "add_ToolStripMenuItem";
+            add_ToolStripMenuItem.Size = new Size(208, 24);
+            add_ToolStripMenuItem.Text = "Добавить элемент";
+            add_ToolStripMenuItem.Click += add_ToolStripMenuItem_Click;
+            // 
+            // change_ToolStripMenuItem
+            // 
+            change_ToolStripMenuItem.Name = "change_ToolStripMenuItem";
+            change_ToolStripMenuItem.Size = new Size(208, 24);
+            change_ToolStripMenuItem.Text = "Изменить элемент";
+            change_ToolStripMenuItem.Click += change_ToolStripMenuItem_Click;
+            // 
+            // del_ToolStripMenuItem
+            // 
+            del_ToolStripMenuItem.Name = "del_ToolStripMenuItem";
+            del_ToolStripMenuItem.Size = new Size(208, 24);
+            del_ToolStripMenuItem.Text = "Удалить элемент";
+            del_ToolStripMenuItem.Click += del_ToolStripMenuItem_Click;
             // 
             // FormOf1
             // 
@@ -143,5 +164,8 @@
         private Button del_button;
         private ContextMenuStrip contextMenuStrip;
         private ToolStripMenuItem перейтиВОкноСтрокиToolStripMenuItem;
+        private ToolStripMenuItem add_ToolStripMenuItem;
+        private ToolStripMenuItem change_ToolStripMenuItem;
+        private ToolStripMenuItem del_ToolStripMenuItem;
     }
 }
