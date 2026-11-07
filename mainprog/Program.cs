@@ -162,7 +162,7 @@ internal static class Program
 
                             double[] A = new double[N];
 
-                            Random r = new Random(88);
+                            Random r = new Random();
                             for (int i = 0; i < N; i++)
                                 A[i] = r.Next(0, 100);
 

@@ -30,7 +30,7 @@
         {
             history_label = new Label();
             elems_listBox = new ListBox();
-            help_label = new Label();
+            help_label1 = new Label();
             button = new Button();
             SuspendLayout();
             // 
@@ -53,15 +53,15 @@
             elems_listBox.Size = new Size(550, 291);
             elems_listBox.TabIndex = 1;
             // 
-            // help_label
+            // help_label1
             // 
-            help_label.AutoSize = true;
-            help_label.Font = new Font("Segoe UI Semibold", 13.8F, FontStyle.Bold | FontStyle.Italic, GraphicsUnit.Point, 204);
-            help_label.Location = new Point(73, 77);
-            help_label.Name = "help_label";
-            help_label.Size = new Size(427, 31);
-            help_label.TabIndex = 2;
-            help_label.Text = "Выберите элемент строки из списка";
+            help_label1.AutoSize = true;
+            help_label1.Font = new Font("Segoe UI Semibold", 13.8F, FontStyle.Bold | FontStyle.Italic, GraphicsUnit.Point, 204);
+            help_label1.Location = new Point(73, 77);
+            help_label1.Name = "help_label1";
+            help_label1.Size = new Size(427, 31);
+            help_label1.TabIndex = 2;
+            help_label1.Text = "Выберите элемент строки из списка";
             // 
             // button
             // 
@@ -80,7 +80,7 @@
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(578, 464);
             Controls.Add(button);
-            Controls.Add(help_label);
+            Controls.Add(help_label1);
             Controls.Add(elems_listBox);
             Controls.Add(history_label);
             Name = "FormOfDel";
@@ -93,7 +93,7 @@
 
         private Label history_label;
         private ListBox elems_listBox;
-        private Label help_label;
+        private Label help_label1;
         private Button button;
     }
 }

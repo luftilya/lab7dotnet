@@ -179,6 +179,6 @@
         private ToolStripMenuItem add_ToolStripMenuItem;
         private ToolStripMenuItem change_ToolStripMenuItem;
         private ToolStripMenuItem del_ToolStripMenuItem;
-        private Label help_label;
+        //private Label help_label;
     }
 }
