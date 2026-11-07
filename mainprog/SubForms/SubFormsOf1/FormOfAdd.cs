@@ -28,14 +28,16 @@ public partial class FormOfAdd : Form
         {
             numbers_strings[listBox.SelectedIndex].Add(elem);
 
-            var list_string = "";
+            if (numbers_strings[listBox.SelectedIndex].Count > 1)
+            {
+                var list_string = "";
 
-            if (listBox.SelectedIndex > 0)
                 for (int i = 0; i < numbers_strings[listBox.SelectedIndex].Count - 1; i++)
                     list_string += numbers_strings[listBox.SelectedIndex][i] + ", ";
 
-            listBox.Items[listBox.SelectedIndex] = list_string + ", " + elem;
-            this.Close();
+                listBox.Items[listBox.SelectedIndex] = list_string + elem;
+            } else
+                listBox.Items[listBox.SelectedIndex] = elem;
         }
     }
 }

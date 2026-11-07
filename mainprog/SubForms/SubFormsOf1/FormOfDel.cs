@@ -33,16 +33,20 @@ namespace lab7.SubForms.SubFormsOf1.SubFormsOfString
 
                 elems_listBox.Items.RemoveAt(elems_listBox.SelectedIndex);
 
-                var elems_string = "";
+                if (numbers_strings[main_listBox.SelectedIndex].Count > 1)
+                {
+                    var list_string = "";
 
-                if (elems_listBox.SelectedIndex > 0)
                     for (int i = 0; i < numbers_strings[main_listBox.SelectedIndex].Count - 1; i++)
-                        elems_string += numbers_strings[main_listBox.SelectedIndex][i] + ", ";
+                        list_string += numbers_strings[main_listBox.SelectedIndex][i] + ", ";
 
-                main_listBox.Items[main_listBox.SelectedIndex] 
-                    = elems_string 
-                    + numbers_strings[numbers_strings.Count - 1]
-                    + '.';
+                    main_listBox.Items[main_listBox.SelectedIndex] = list_string +
+                        numbers_strings[main_listBox.SelectedIndex]
+                        [numbers_strings[main_listBox.SelectedIndex].Count - 1];
+                }
+                else
+                    main_listBox.Items[main_listBox.SelectedIndex] =
+                        numbers_strings[main_listBox.SelectedIndex][0];
                 this.Close();
             }
         }

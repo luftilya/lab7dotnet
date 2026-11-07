@@ -48,13 +48,24 @@ public partial class FormOf1 : Form
     }
 
     private void add_ToolStripMenuItem_Click(object sender, EventArgs e)
-        => new FormOfAdd().ShowDialog();
+    {
+        if (listBox.SelectedIndex != -1)
+            new FormOfAdd(numbers_strings, listBox).ShowDialog();
+    }
 
     private void change_ToolStripMenuItem_Click(object sender, EventArgs e)
-        => new FormOfChange().ShowDialog();
+    {
+        if (listBox.SelectedIndex != -1
+            && numbers_strings[listBox.SelectedIndex].Count > 0)
+            new FormOfChange(numbers_strings, listBox).ShowDialog();
+    }
 
     private void del_ToolStripMenuItem_Click(object sender, EventArgs e)
-        => new FormOfDel().ShowDialog();
+    {
+        if (listBox.SelectedIndex != -1
+            && numbers_strings[listBox.SelectedIndex].Count > 0)
+            new FormOfDel(numbers_strings, listBox).ShowDialog();
+    }
 
     private void find_button_Click(object sender, EventArgs e)
     {
@@ -62,7 +73,8 @@ public partial class FormOf1 : Form
 
         if (numbers_strings.Count > 0)
             for (int i = 0; i < numbers_strings.Count; i++)
-                if (numbers_strings[i].Average() < 0)
+                if (numbers_strings[i].Count > 0
+                    && numbers_strings[i].Average() < 0)
                     ++count;
 
         find_label.Text = count.ToString();

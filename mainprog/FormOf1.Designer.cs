@@ -29,7 +29,7 @@
         private void InitializeComponent()
         {
             components = new System.ComponentModel.Container();
-            hystory_label = new Label();
+            history_label = new Label();
             find_button = new Button();
             listBox = new ListBox();
             find_label = new Label();
@@ -39,24 +39,25 @@
             add_ToolStripMenuItem = new ToolStripMenuItem();
             change_ToolStripMenuItem = new ToolStripMenuItem();
             del_ToolStripMenuItem = new ToolStripMenuItem();
+            help_label = new Label();
             contextMenuStrip.SuspendLayout();
             SuspendLayout();
             // 
-            // hystory_label
+            // history_label
             // 
-            hystory_label.AutoSize = true;
-            hystory_label.Font = new Font("Segoe UI Black", 22.2F, FontStyle.Bold, GraphicsUnit.Point, 204);
-            hystory_label.Location = new Point(214, 9);
-            hystory_label.Name = "hystory_label";
-            hystory_label.Size = new Size(816, 100);
-            hystory_label.TabIndex = 0;
-            hystory_label.Text = "Найти кол-во строк, у которых среднее \r\nарифметическое элементов меньше нуля";
-            hystory_label.TextAlign = ContentAlignment.MiddleCenter;
+            history_label.AutoSize = true;
+            history_label.Font = new Font("Segoe UI Black", 22.2F, FontStyle.Bold, GraphicsUnit.Point, 204);
+            history_label.Location = new Point(214, 9);
+            history_label.Name = "history_label";
+            history_label.Size = new Size(816, 100);
+            history_label.TabIndex = 0;
+            history_label.Text = "Найти кол-во строк, у которых среднее \r\nарифметическое элементов меньше нуля";
+            history_label.TextAlign = ContentAlignment.MiddleCenter;
             // 
             // find_button
             // 
             find_button.Font = new Font("Segoe UI", 18F, FontStyle.Bold, GraphicsUnit.Point, 204);
-            find_button.Location = new Point(80, 181);
+            find_button.Location = new Point(80, 242);
             find_button.Name = "find_button";
             find_button.Size = new Size(286, 63);
             find_button.TabIndex = 1;
@@ -68,7 +69,7 @@
             // 
             listBox.Font = new Font("Segoe UI", 18F, FontStyle.Regular, GraphicsUnit.Point, 204);
             listBox.FormattingEnabled = true;
-            listBox.Location = new Point(805, 129);
+            listBox.Location = new Point(805, 190);
             listBox.Name = "listBox";
             listBox.Size = new Size(413, 250);
             listBox.TabIndex = 3;
@@ -78,7 +79,7 @@
             // 
             find_label.AutoSize = true;
             find_label.Font = new Font("Segoe UI", 24F, FontStyle.Bold, GraphicsUnit.Point, 204);
-            find_label.Location = new Point(66, 288);
+            find_label.Location = new Point(66, 349);
             find_label.MinimumSize = new Size(300, 54);
             find_label.Name = "find_label";
             find_label.Size = new Size(300, 54);
@@ -88,7 +89,7 @@
             // add_button
             // 
             add_button.Font = new Font("Segoe UI", 18F, FontStyle.Bold, GraphicsUnit.Point, 204);
-            add_button.Location = new Point(590, 154);
+            add_button.Location = new Point(590, 215);
             add_button.Name = "add_button";
             add_button.Size = new Size(183, 90);
             add_button.TabIndex = 4;
@@ -99,7 +100,7 @@
             // del_button
             // 
             del_button.Font = new Font("Segoe UI", 18F, FontStyle.Bold, GraphicsUnit.Point, 204);
-            del_button.Location = new Point(590, 263);
+            del_button.Location = new Point(590, 324);
             del_button.Name = "del_button";
             del_button.Size = new Size(183, 90);
             del_button.TabIndex = 5;
@@ -135,17 +136,28 @@
             del_ToolStripMenuItem.Text = "Удалить элемент";
             del_ToolStripMenuItem.Click += del_ToolStripMenuItem_Click;
             // 
+            // help_label
+            // 
+            help_label.AutoSize = true;
+            help_label.Font = new Font("Segoe UI", 16.2F, FontStyle.Italic, GraphicsUnit.Point, 204);
+            help_label.Location = new Point(148, 136);
+            help_label.Name = "help_label";
+            help_label.Size = new Size(922, 38);
+            help_label.TabIndex = 6;
+            help_label.Text = "Для работы со строками нажмите правой кнопкой мыши по строке";
+            // 
             // FormOf1
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(1243, 402);
+            ClientSize = new Size(1243, 467);
+            Controls.Add(help_label);
             Controls.Add(del_button);
             Controls.Add(add_button);
             Controls.Add(listBox);
             Controls.Add(find_label);
             Controls.Add(find_button);
-            Controls.Add(hystory_label);
+            Controls.Add(history_label);
             Name = "FormOf1";
             Text = "Количество строк, у которых среднее арифметическое элементов меньше нуля";
             contextMenuStrip.ResumeLayout(false);
@@ -155,7 +167,7 @@
 
         #endregion
 
-        private Label hystory_label;
+        private Label history_label;
         private Button find_button;
         private Label help_label;
         private ListBox listBox;
@@ -167,5 +179,6 @@
         private ToolStripMenuItem add_ToolStripMenuItem;
         private ToolStripMenuItem change_ToolStripMenuItem;
         private ToolStripMenuItem del_ToolStripMenuItem;
+        private Label help_label;
     }
 }
