@@ -218,7 +218,7 @@ internal static class Program
                             Console.WriteLine($"^ Вычисленное значение v: {v}");
                             Console.WriteLine("^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^");
 
-                            double k = new double();
+                            double k = 0;
                             WonderfulTools.CalcK(u, v, ref k);
 
                             Console.WriteLine($"^ Вычисленное значение k: {k}");
